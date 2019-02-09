@@ -1,14 +1,18 @@
 import React from 'react'
+import data from '../../database/mockData'
 
 const TitleView = (props) => {
   return (
     <div>
       <div style={titleView}>
-        <h4>Title:</h4>
-        <br/>
-        <br/>
-        <br/>
+        <h2>{data.events[0].title}</h2>
         <h4>Description:</h4>
+        <p>{data.events[0].description}</p>
+          <div style={textSize}>
+            Price: ${data.events[0].price}
+          </div> 
+        <div>
+      </div>
       </div>
       <div style={{marginLeft: '5px'}}>
         <ul>
@@ -27,6 +31,9 @@ const titleView = {
   height: '300px',
   border: '1px solid black',
   padding: '10px'
+}
+const textSize = {
+  fontSize: '25px'
 }
 
 export default TitleView

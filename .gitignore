@@ -5,3 +5,4 @@ node_modules
 webpack.config.js
 dist/bundle.js
 package-lock.json
+.env

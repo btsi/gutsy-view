@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import RenderPicture from './components/picView.js';
 import TitleView from './components/titleView.js'
+import data from '../database/mockData'
 
 
 class App extends React.Component {
@@ -54,8 +55,8 @@ const midView = {
     width: '400px',
     outline: 'none',
     cursor: 'pointer'
-
   }
+  
 
 ReactDOM.render(<App/>, document.getElementById('app'));
 
