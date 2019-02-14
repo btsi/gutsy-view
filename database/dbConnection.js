@@ -7,21 +7,16 @@ let mydb = `mongodb://${user}:${pass}@${host}`
 mongoose.connect(`${mydb}`, { useNewUrlParser: true })
 
 let gutsySchema = new mongoose.Schema({
-  trip_id: 'number',
+  id: 'number',
   title: 'string',
   category: 'string',
-  image_url: 'string',
+  image_URL: 'string',
   description: 'string',
   price: 'number'
-},
-{
-  collection: 'project'
 })
 
+let Gutsydb = mongoose.model('Gutsydb', gutsySchema)
 
-
-let gutsydb = mongoose.model('newSchema', gutsySchema)
-
-module.exports.gutsydb = gutsydb
+module.exports.Gutsydb = Gutsydb
 
 

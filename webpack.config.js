@@ -1,6 +1,9 @@
 module.exports = {
   watch: true,
   entry: './src/index.js',
+  node: {
+    fs: 'empty'
+  },
   module: {
     rules: [
       {
@@ -20,6 +23,7 @@ module.exports = {
             },
         ]
     },
+    
     ]
   },
   resolve: {

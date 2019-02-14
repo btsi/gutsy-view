@@ -1,10 +1,10 @@
 import React from 'react'
-import data from '../../database/mockData'
+// import data from '../../database/mockData'
 
 const RenderPicture = (props) => {
   return (
     <div style={picView}>
-    <img src={data.events[0].image_URL} style={imageStyle}></img>
+    <img src={props.url} style={imageStyle}></img>
     </div>
   )
 }

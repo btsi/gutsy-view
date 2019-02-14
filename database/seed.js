@@ -1,16 +1,19 @@
-const data = require('./mockData')
-const db = require('./dbConnection')
+const data = require('./mockData.js')
+const db = require('./dbConnection.js')
+const mongoose = require('mongoose')
 
-
-db.gutsydb.remove({})
-  .then( () => {
-    db.gutsydb.insertMany(data.events)
+db.Gutsydb.remove({})
+  .then(() => {
+    db.Gutsydb.insertMany(data)
     .then((success) => {
       console.log('successfully seeded db')
     })
-    .catch((err) => {
-      console.log('error')
-    })
-  })
-    .catch(err => console.log('error'))
+  }).catch(err => console.log('error'))
+// console.log(db)
+console.log(data)
+
+//if i want to insert one use findOneAndUpdate
+
+
+
 

@@ -1,26 +1,58 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RenderPicture from './components/picView.js';
-import TitleView from './components/titleView.js'
-import data from '../database/mockData'
-
+import TitleView from './components/titleView.js';
+import axios from 'axios'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      id: 0
+      id: this.props.id || 0,
+      title: '',
+      category: '',
+      description: '',
+      price: ''
     }
   }
-  
+
+  getData() {
+    axios.get('/databaseRetrievalOnLoad')
+      .then((response) => {
+        console.log('success client axios request', response)
+        let trip = response.data
+        this.setState({
+          id: trip[this.state.id].id,
+          title: trip[this.state.id].title,
+          image_URL: trip[this.state.id].image_URL,
+          category: trip[this.state.id].category,
+          description: trip[this.state.id].description,
+          price: trip[this.state.id].price
+        })
+      })
+      .catch((err) => {
+        console.log('error', err)
+      })
+  }
+
+  componentDidMount() {
+    this.getData()
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState === this.state) {
+      this.getData()
+    }
+  }
+
   render() {
     return (
       <div className='main' style={mainView}>
         <div style={midView}>
           <div style={picTitleView}>
-            <RenderPicture/> <TitleView/>
+            <RenderPicture url={this.state.image_URL}/> 
+            <TitleView title={this.state.title} description={this.state.description} price={this.state.price}/>
           </div>
-          <button id="book" style={button}>Book Now</button>
         </div>
       </div>
     )
@@ -42,21 +74,6 @@ const midView = {
     padding: '20px',
     align: 'center'
   }
-  const button = {
-    margin: '10px',
-    backgroundColor: '#2d2a26',
-    borderColor: 'white',
-    borderRadius: '5px',
-    color: 'white',
-    fontSize: 24,
-    fontWeight: 'bold',
-    overflow: 'hidden',
-    padding: 5,
-    width: '400px',
-    outline: 'none',
-    cursor: 'pointer'
-  }
-  
 
 ReactDOM.render(<App/>, document.getElementById('app'));
 
