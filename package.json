@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-web": "webpack --config ./webpack.config.js --mode production",
+    "start-web": "webpack --config ./webpack.config.js --mode production --watch",
     "start-server": "nodemon server/server.js",
+    "server-prod" : "node server/server.js",
+    "webpack-prod" : "webpack --config ./webpack.config.js --mode production",
     "restart": "pm2 startOrRestart ecosystem.config.js",
-    "deploy": "pm2 deploy ecosystem.config.js production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "pm2 deploy ecosystem.config.js production"
   },
   "repository": {
     "type": "git",
@@ -53,3 +54,4 @@
     "react-input-calendar": "^0.5.4"
   }
 }
+ 
