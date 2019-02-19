@@ -10,7 +10,7 @@ module.exports = {
       key: '~/.ssh/Gutsy2.pem',
       ref: 'origin/master',
       repo: 'https://github.com/MikeJDev/gutsy-view.git',
-      path: '/home/ubuntu/server',
+      path: '/home/ubuntu/server/current',
       'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
     }
   }
