@@ -6,8 +6,8 @@ module.exports = {
   deploy: {
     production: {
       user: 'ubuntu',
-      host: 'ec2-13-59-11-91.us-east-2.compute.amazonaws.com',
-      key: '~/.ssh/GutsyProject.pem',
+      host: 'ec2-13-58-220-36.us-east-2.compute.amazonaws.com',
+      key: '/Users/mikejanes/.ssh/Gutsy2.pem',
       ref: 'origin/master',
       repo: 'https://github.com/MikeJDev/gutsy-view.git',
       path: '/home/ubuntu/server',
