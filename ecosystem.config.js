@@ -11,7 +11,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'https://github.com/MikeJDev/gutsy-view.git',
       path: '/home/ubuntu/server',
-      post-deploy: 'npm install && pm2 startOrRestart ecosystem.config.js && npm run webpack-prod'
+      'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js && npm run webpack-prod'
     }
   }
 }
