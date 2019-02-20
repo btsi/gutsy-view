@@ -7,7 +7,7 @@
     "start-web": "webpack -p --watch",
     "start-server": "nodemon server/server.js",
     "server-prod": "node server/server.js",
-    "webpack-prod": "webpack",
+    "webpack-prod": "webpack -p",
     "restart": "pm2 startOrRestart ecosystem.config.js",
     "deploy": "pm2 deploy ecosystem.config.js production"
   },
