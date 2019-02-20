@@ -1,8 +1,8 @@
 module.exports = {
   entry: './src/index.js',
-  node: {
-    fs: 'empty'
-  },
+  // node: {
+  //   fs: 'empty'
+  // },
   module: {
     rules: [
       {
@@ -13,17 +13,6 @@ module.exports = {
           presets: ['@babel/preset-react', '@babel/preset-env']
         }
       },
-    //   {
-    //     test: /\.(jpg|png|gif|svg|pdf|ico|jpeg)$/,
-    //     use: [
-    //         {
-    //             loader: 'file-loader',
-    //             options: {
-    //                 name: '[path][name]-[hash:8].[ext]'
-    //             },
-    //         },
-    //     ]
-    // },
     ]
   },
   resolve: {
