@@ -1,8 +1,8 @@
 module.exports = {
   entry: './src/index.js',
-  node: {
-    fs: 'empty'
-  },
+  // node: {
+  //   fs: 'empty'
+  // },
   module: {
     rules: [
       {
