@@ -7,7 +7,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        include: './src',
+        include: '/Users/mikejanes/Desktop/gutsy-view/src',
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
