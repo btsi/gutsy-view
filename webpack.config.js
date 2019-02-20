@@ -9,7 +9,9 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
-        query: ['@babel/preset-react', '@babel/preset-env']
+        query: {
+          presets: ['@babel/preset-react', '@babel/preset-env']
+        }
       },
       {
         test: /\.(jpg|png|gif|svg|pdf|ico|jpeg)$/,
