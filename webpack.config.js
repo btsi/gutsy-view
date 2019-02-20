@@ -7,9 +7,9 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
+        query: ['@babel/preset-react', '@babel/preset-env']
       },
       {
         test: /\.(jpg|png|gif|svg|pdf|ico|jpeg)$/,
@@ -22,7 +22,6 @@ module.exports = {
             },
         ]
     },
-    
     ]
   },
   resolve: {
