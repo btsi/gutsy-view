@@ -1,7 +1,7 @@
 module.exports = {
   apps: [{
     name: 'gutsy-project-view',
-    script: './src/index.js'
+    script: __dirname + './src/index.js'
   }],
   deploy: {
     production: {
@@ -11,7 +11,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'https://github.com/MikeJDev/gutsy-view.git',
       path: '/home/ubuntu/server',
-      'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js && npm run webpack-prod && npm run server-prod'
+      'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js && npm run webpack-prod'
     }
   }
 }
