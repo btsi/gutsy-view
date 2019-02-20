@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import RenderPicture from './components/picView.js';
-import TitleView from './components/titleView.js';
-import axios from 'axios'
+const React = require('react')
+const ReactDOM = require('react-dom')
+const RenderPicture = require ('./components/picView.js')
+const TitleView = require ('./components/titleView.js')
+const axios = require ('axios')
 
 class App extends React.Component {
   constructor(props) {
