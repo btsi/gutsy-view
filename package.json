@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-web": "webpack --config ./webpack.config.js --mode production --watch",
+    "start-web": "webpack -p --watch",
     "start-server": "nodemon server/server.js",
     "server-prod": "node server/server.js",
     "webpack-prod": "webpack -d",

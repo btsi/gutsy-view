@@ -7,6 +7,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
+        include: './src',
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
