@@ -1,29 +1,16 @@
 module.exports = {
-  watch: true,
   entry: './src/index.js',
-  node: {
-    fs: 'empty'
-  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-
+        include: __dirname + '/src',
         exclude: /node_modules/,
-        use: ['babel-loader']
+        loader: 'babel-loader',
+        query: {
+          presets: ['@babel/preset-react', '@babel/preset-env']
+        }
       },
-      {
-        test: /\.(jpg|png|gif|svg|pdf|ico|jpeg)$/,
-        use: [
-            {
-                loader: 'file-loader',
-                options: {
-                    name: '[path][name]-[hash:8].[ext]'
-                },
-            },
-        ]
-    },
-    
     ]
   },
   resolve: {
