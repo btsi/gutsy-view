@@ -1,21 +1,30 @@
 const entry = require('../faker')
 let fs = require('fs')
 
+console.log(new Date().toISOString());
+let data = () => {
+  let output = []
+  for (let i = 0; i < 50000; i++) {
+    output.push(entry())
+  }
 
-let data = []
-let payload = JSON.stringify(data)
-
-for (let i = 0; i < 1000000; i++) {
-  data.push(entry())
-
+  return output
 }
 
-
-if (__dirname + '/seedFile.js') {
-  fs.appendFile(__dirname + '/seedFile.js', payload)
-} else {
-  fs.writeFile(__dirname + '/seedFile.js', payload)
+let dataWrite = (collection) => {
+  let stream = fs.createWriteStream("seedFile.csv", { flags: 'a' });
+  collection.forEach(function (item, index) {
+    stream.write(item + "\n");
+  });
+  stream.end();
 }
+
+for (let i = 0; i < 1; i++) {
+  dataWrite(data())
+}
+
+console.log(new Date().toISOString());
+
 
 
 

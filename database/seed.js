@@ -1,16 +1,16 @@
 const data = require('./seedFile.js')
 const db = require('./dbConnection')
 
-let payload = data.data
+let payload = data
 
-db.Gutsydb.insertMany(payload, { upsert: true })
-  .then((success) => {
-    console.log('successfully seeded db')
-  }).catch(err => console.log('error'))
-  .then(() => { return })
+// db.Gutsydb.insertMany(payload, { upsert: true })
+//   .then((success) => {
+//     console.log('successfully seeded db')
+//   }).catch(err => console.log('error'))
+//   .then(() => { return })
 
 
-// console.log(data.data)
+console.log(data)
 
 
 
