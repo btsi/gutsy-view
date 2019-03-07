@@ -7,3 +7,4 @@ dist/bundle.js
 package-lock.json
 .env
 seedFile.js
+.csv
